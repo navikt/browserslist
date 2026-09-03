@@ -32,4 +32,25 @@ Generated files are checked in; CI fails if `pnpm generate` produces a diff.
 
 ## Releases
 
-[Changesets](https://github.com/changesets/changesets) + GitHub Actions publish to the public npm registry with provenance on merge to `main`.
+[Changesets](https://github.com/changesets/changesets) + GitHub Actions publish to [GitHub Packages](https://docs.github.com/packages) on merge to `main`. The release workflow reuses the CI workflow, so a publish only happens after the test matrix, the generated-files check and `pnpm check` all pass.
+
+## Installing in a consuming project
+
+These packages are internal and hosted on GitHub Packages, which has no anonymous read access. Consumers need an `.npmrc` pointing the `@navikt` scope at the GitHub registry:
+
+```ini
+@navikt:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+Set `NODE_AUTH_TOKEN` to a personal access token with the `read:packages` scope. In GitHub Actions, `secrets.GITHUB_TOKEN` works directly:
+
+```yaml
+- uses: actions/setup-node@v4
+  with:
+    node-version: 24
+    registry-url: https://npm.pkg.github.com
+- run: pnpm install --frozen-lockfile
+  env:
+    NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```

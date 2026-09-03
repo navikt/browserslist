@@ -57,8 +57,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true,
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "generate": "node scripts/generate.mjs",
