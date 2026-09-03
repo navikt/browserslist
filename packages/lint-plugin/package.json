@@ -1,6 +1,6 @@
 {
   "name": "@navikt/browser-support-linting",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "ESLint/Oxlint presets that flag Nav's non-lowerable syntax.",
   "license": "MIT",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@navikt/browserslist-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Nav's shared browser support targets: a browserslist shareable config plus precomputed esbuild, Lightning CSS and Vite helpers.",
   "license": "MIT",
   "repository": {
