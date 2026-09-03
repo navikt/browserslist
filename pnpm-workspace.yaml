@@ -1,0 +1,8 @@
+packages:
+  - "packages/*"
+allowBuilds:
+  esbuild: true
+# Pin the caniuse database exactly so browserslist's own dependency resolves to
+# the same data our generator and tests were validated against.
+overrides:
+  caniuse-lite: 1.0.30001810

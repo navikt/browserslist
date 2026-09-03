@@ -1,0 +1,473 @@
+{
+  "description": "Curated source of truth for the browser-support lint preset. Each feature declares a disposition: 'esx' (below-floor unlowerable builtin/regex feature, enforced via wrapped eslint-plugin-es-x rules), 'compat' (Web API, eslint-plugin-compat's domain; 'compatCoverage' records whether compat actually flags it today), 'syntax' (bundler-lowerable, the config package's concern; kept for level marker tests), or 'safe' (unlowerable but native at/above the floor; generation fails if that stops being true). Per-browser native minima are NOT stored here — scripts/generate.mjs derives them from @mdn/browser-compat-data into data/support.json.",
+  "levels": {
+    "es": {
+      "year": 2021,
+      "caveats": [
+        "Class static blocks (ES2022) need Safari 16.4; the floor is Safari 16. Bundlers lower them; unbundled code must not use them."
+      ]
+    },
+    "baseline": {
+      "year": 2022,
+      "approximate": true
+    }
+  },
+  "features": {
+    "promise-withresolvers": {
+      "title": "Promise.withResolvers",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Promise.withResolvers"],
+      "esx": [{ "rule": "no-promise-withresolvers" }],
+      "guidance": "Polyfill via core-js (`esnext.promise.with-resolvers`) or feature-guard."
+    },
+    "promise-try": {
+      "title": "Promise.try",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Promise.try"],
+      "esx": [{ "rule": "no-promise-try" }],
+      "guidance": "Polyfill via core-js (`esnext.promise.try`) or feature-guard."
+    },
+    "array-fromasync": {
+      "title": "Array.fromAsync",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Array.fromAsync"],
+      "esx": [{ "rule": "no-array-fromasync" }],
+      "guidance": "Polyfill via core-js (`esnext.array.from-async`) or feature-guard."
+    },
+    "object-groupby": {
+      "title": "Object.groupBy",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Object.groupBy"],
+      "esx": [{ "rule": "no-object-groupby" }],
+      "guidance": "Polyfill via core-js (`esnext.object.group-by`) or feature-guard."
+    },
+    "map-groupby": {
+      "title": "Map.groupBy",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Map.groupBy"],
+      "esx": [{ "rule": "no-map-groupby" }],
+      "guidance": "Polyfill via core-js (`esnext.map.group-by`) or feature-guard."
+    },
+    "map-getorinsert": {
+      "title": "Map/WeakMap.prototype.getOrInsert[Computed]",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": [
+        "javascript.builtins.Map.getOrInsert",
+        "javascript.builtins.Map.getOrInsertComputed",
+        "javascript.builtins.WeakMap.getOrInsert",
+        "javascript.builtins.WeakMap.getOrInsertComputed"
+      ],
+      "esx": [
+        { "rule": "no-map-prototype-getorinsert", "aggressive": true },
+        { "rule": "no-map-prototype-getorinsertcomputed", "aggressive": true },
+        { "rule": "no-weakmap-prototype-getorinsert", "aggressive": true },
+        { "rule": "no-weakmap-prototype-getorinsertcomputed", "aggressive": true }
+      ],
+      "guidance": "Very new (2025 proposal); use `map.get(k) ?? map.set(k, v).get(k)` or a polyfill."
+    },
+    "set-methods": {
+      "title": "Set methods (union, intersection, difference, …)",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": [
+        "javascript.builtins.Set.union",
+        "javascript.builtins.Set.intersection",
+        "javascript.builtins.Set.difference",
+        "javascript.builtins.Set.symmetricDifference",
+        "javascript.builtins.Set.isSubsetOf",
+        "javascript.builtins.Set.isSupersetOf",
+        "javascript.builtins.Set.isDisjointFrom"
+      ],
+      "esx": [
+        { "rule": "no-set-prototype-union", "aggressive": false },
+        { "rule": "no-set-prototype-intersection", "aggressive": false },
+        { "rule": "no-set-prototype-difference", "aggressive": false },
+        { "rule": "no-set-prototype-symmetricdifference", "aggressive": true },
+        { "rule": "no-set-prototype-issubsetof", "aggressive": true },
+        { "rule": "no-set-prototype-issupersetof", "aggressive": true },
+        { "rule": "no-set-prototype-isdisjointfrom", "aggressive": true }
+      ],
+      "guidance": "Polyfill via core-js (`esnext.set.union` etc.) or feature-guard."
+    },
+    "array-immutable": {
+      "title": "Array.prototype.toSorted/toReversed/toSpliced/with",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": [
+        "javascript.builtins.Array.toSorted",
+        "javascript.builtins.Array.toReversed",
+        "javascript.builtins.Array.toSpliced",
+        "javascript.builtins.Array.with"
+      ],
+      "esx": [
+        { "rule": "no-array-prototype-tosorted", "aggressive": true },
+        { "rule": "no-array-prototype-toreversed", "aggressive": true },
+        { "rule": "no-array-prototype-tospliced", "aggressive": true },
+        { "rule": "no-array-prototype-with", "aggressive": false }
+      ],
+      "guidance": "Polyfill via core-js (`esnext.array.to-sorted` etc.), or copy first: `[...arr].sort()`."
+    },
+    "iterator-helpers": {
+      "title": "Iterator helpers (Iterator.from, .map, .filter, …)",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": [
+        "javascript.builtins.Iterator.from",
+        "javascript.builtins.Iterator.map",
+        "javascript.builtins.Iterator.filter",
+        "javascript.builtins.Iterator.take",
+        "javascript.builtins.Iterator.drop",
+        "javascript.builtins.Iterator.flatMap",
+        "javascript.builtins.Iterator.reduce",
+        "javascript.builtins.Iterator.toArray",
+        "javascript.builtins.Iterator.forEach",
+        "javascript.builtins.Iterator.some",
+        "javascript.builtins.Iterator.every",
+        "javascript.builtins.Iterator.find"
+      ],
+      "esx": [
+        { "rule": "no-iterator" },
+        { "rule": "no-iterator-prototype-map", "aggressive": false },
+        { "rule": "no-iterator-prototype-filter", "aggressive": false },
+        { "rule": "no-iterator-prototype-take", "aggressive": false },
+        { "rule": "no-iterator-prototype-drop", "aggressive": false },
+        { "rule": "no-iterator-prototype-flatmap", "aggressive": false },
+        { "rule": "no-iterator-prototype-reduce", "aggressive": false },
+        { "rule": "no-iterator-prototype-toarray", "aggressive": false },
+        { "rule": "no-iterator-prototype-foreach", "aggressive": false },
+        { "rule": "no-iterator-prototype-some", "aggressive": false },
+        { "rule": "no-iterator-prototype-every", "aggressive": false },
+        { "rule": "no-iterator-prototype-find", "aggressive": false }
+      ],
+      "guidance": "Polyfill via core-js (`esnext.iterator.*`) or spread into an array first."
+    },
+    "regexp-escape": {
+      "title": "RegExp.escape",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.RegExp.escape"],
+      "esx": [{ "rule": "no-regexp-escape" }],
+      "guidance": "Polyfill via core-js (`esnext.regexp.escape`) or escape manually."
+    },
+    "error-iserror": {
+      "title": "Error.isError",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Error.isError"],
+      "esx": [{ "rule": "no-error-iserror" }],
+      "guidance": "Use `instanceof Error` (cross-realm caveats aside) or polyfill via core-js."
+    },
+    "temporal": {
+      "title": "Temporal",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Temporal"],
+      "esx": [{ "rule": "no-temporal" }],
+      "guidance": "Not shipped in Safari at all; use `@js-temporal/polyfill` deliberately or date-fns."
+    },
+    "intl-duration": {
+      "title": "Intl.DurationFormat",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Intl.DurationFormat"],
+      "esx": [{ "rule": "no-intl-durationformat" }],
+      "guidance": "Feature-guard (`'DurationFormat' in Intl`) with a manual fallback."
+    },
+    "float16": {
+      "title": "Float16Array / Math.f16round / DataView float16",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": [
+        "javascript.builtins.Float16Array",
+        "javascript.builtins.Math.f16round",
+        "javascript.builtins.DataView.getFloat16",
+        "javascript.builtins.DataView.setFloat16"
+      ],
+      "esx": [
+        { "rule": "no-float16array" },
+        { "rule": "no-math-f16round" },
+        { "rule": "no-dataview-prototype-getfloat16-setfloat16", "aggressive": true }
+      ],
+      "guidance": "Polyfill via core-js (`esnext.float16-array`) or avoid half-precision."
+    },
+    "uint8-base64": {
+      "title": "Uint8Array base64/hex conversion",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": [
+        "javascript.builtins.Uint8Array.fromBase64",
+        "javascript.builtins.Uint8Array.toBase64",
+        "javascript.builtins.Uint8Array.setFromBase64",
+        "javascript.builtins.Uint8Array.fromHex",
+        "javascript.builtins.Uint8Array.toHex",
+        "javascript.builtins.Uint8Array.setFromHex"
+      ],
+      "esx": [
+        { "rule": "no-uint8array-frombase64" },
+        { "rule": "no-uint8array-fromhex" },
+        { "rule": "no-uint8array-prototype-tobase64", "aggressive": true },
+        { "rule": "no-uint8array-prototype-tohex", "aggressive": true },
+        { "rule": "no-uint8array-prototype-setfrombase64", "aggressive": true },
+        { "rule": "no-uint8array-prototype-setfromhex", "aggressive": true }
+      ],
+      "guidance": "Polyfill via core-js (`esnext.uint8-array.to-base64` etc.) or use `atob`/`btoa` helpers."
+    },
+    "json-rawjson": {
+      "title": "JSON.rawJSON / JSON.isRawJSON",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": [
+        "javascript.builtins.JSON.rawJSON",
+        "javascript.builtins.JSON.isRawJSON"
+      ],
+      "esx": [
+        { "rule": "no-json-rawjson" },
+        { "rule": "no-json-israwjson" }
+      ],
+      "guidance": "Feature-guard (`'rawJSON' in JSON`); no lightweight polyfill exists."
+    },
+    "regex-lookbehind": {
+      "title": "RegExp lookbehind assertions",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.regular_expressions.lookbehind_assertion"],
+      "esx": [{ "rule": "no-regexp-lookbehind-assertions" }],
+      "guidance": "Cannot be polyfilled — a lookbehind in a regex literal throws at parse time on old Safari. Rewrite the pattern (capture + post-process)."
+    },
+    "regex-v-flag": {
+      "title": "RegExp v flag (unicodeSets)",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.RegExp.unicodeSets"],
+      "esx": [{ "rule": "no-regexp-v-flag" }],
+      "guidance": "Cannot be polyfilled — use the `u` flag and expand the set operations manually."
+    },
+    "regex-modifiers": {
+      "title": "RegExp inline modifiers ((?i:…))",
+      "disposition": "esx",
+      "unlowerable": true,
+      "bcd": ["javascript.regular_expressions.modifier"],
+      "esx": [{ "rule": "no-regexp-modifiers" }],
+      "guidance": "Cannot be polyfilled — split the pattern or apply the flag to the whole regex."
+    },
+
+    "abortsignal-timeout": {
+      "title": "AbortSignal.timeout",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.AbortSignal.timeout_static"]
+    },
+    "abortsignal-any": {
+      "title": "AbortSignal.any",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.AbortSignal.any_static"],
+      "compatCoverage": "missed",
+      "guidance": "Not flagged by eslint-plugin-compat today — guard manually or polyfill."
+    },
+    "structured-clone": {
+      "title": "structuredClone",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.structuredClone"]
+    },
+    "crypto-randomuuid": {
+      "title": "crypto.randomUUID",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.Crypto.randomUUID"]
+    },
+    "dialog-showmodal": {
+      "title": "<dialog> showModal",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.HTMLDialogElement.showModal"]
+    },
+    "clipboard-api": {
+      "title": "Async Clipboard API",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.Clipboard"]
+    },
+    "popover": {
+      "title": "Popover API (showPopover)",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.HTMLElement.showPopover"],
+      "compatCoverage": "missed",
+      "guidance": "Not flagged by eslint-plugin-compat today — feature-guard (`'showPopover' in el`) or use a library."
+    },
+    "view-transitions": {
+      "title": "View Transitions (document.startViewTransition)",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.Document.startViewTransition"],
+      "compatCoverage": "missed",
+      "guidance": "Not flagged by eslint-plugin-compat today — feature-guard; the no-transition path must work."
+    },
+    "navigation-api": {
+      "title": "Navigation API (window.navigation)",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.Navigation"],
+      "compatCoverage": "caught",
+      "guidance": "Keep History API fallbacks."
+    },
+    "urlpattern": {
+      "title": "URLPattern",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.URLPattern"],
+      "compatCoverage": "caught",
+      "guidance": "Use the `urlpattern-polyfill` package."
+    },
+    "custom-highlight": {
+      "title": "Custom Highlight API",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.Highlight"],
+      "compatCoverage": "caught"
+    },
+    "webtransport": {
+      "title": "WebTransport",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.WebTransport"],
+      "compatCoverage": "caught",
+      "guidance": "No polyfill — feature-guard with a WebSocket fallback."
+    },
+    "trusted-types": {
+      "title": "Trusted Types",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.trustedTypes"],
+      "compatCoverage": "caught",
+      "guidance": "Use the tt-policy pattern behind a feature-guard; enforcement is Chromium-only anyway."
+    },
+    "reporting-api": {
+      "title": "Reporting API (ReportingObserver)",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.ReportingObserver"],
+      "compatCoverage": "caught"
+    },
+    "check-visibility": {
+      "title": "Element.checkVisibility",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.Element.checkVisibility"],
+      "compatCoverage": "missed",
+      "guidance": "Not flagged by eslint-plugin-compat today (instance-receiver usage) — feature-guard or use IntersectionObserver."
+    },
+    "request-idle": {
+      "title": "requestIdleCallback",
+      "disposition": "compat",
+      "unlowerable": true,
+      "bcd": ["api.Window.requestIdleCallback"],
+      "compatCoverage": "caught",
+      "guidance": "Never shipped in Safari — feature-guard with a `setTimeout` fallback."
+    },
+
+    "optional-chaining": {
+      "title": "Optional chaining (?.)",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": ["javascript.operators.optional_chaining"]
+    },
+    "nullish-coalescing": {
+      "title": "Nullish coalescing (??)",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": ["javascript.operators.nullish_coalescing"]
+    },
+    "logical-assignment": {
+      "title": "Logical assignment (&&=, ||=, ??=)",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": [
+        "javascript.operators.logical_and_assignment",
+        "javascript.operators.logical_or_assignment",
+        "javascript.operators.nullish_coalescing_assignment"
+      ]
+    },
+    "private-methods": {
+      "title": "Private class methods",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": ["javascript.classes.private_class_methods"]
+    },
+    "static-blocks": {
+      "title": "Class static initialization blocks",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": ["javascript.classes.static.initialization_blocks"]
+    },
+    "object-spread": {
+      "title": "Object spread in literals",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": ["javascript.operators.spread.spread_in_object_literals"]
+    },
+    "async-generator": {
+      "title": "Async generator functions",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": ["javascript.statements.async_generator_function"]
+    },
+    "using-decl": {
+      "title": "using declarations (explicit resource management)",
+      "disposition": "syntax",
+      "unlowerable": false,
+      "bcd": ["javascript.statements.using"]
+    },
+
+    "array-at": {
+      "title": "Array.prototype.at",
+      "disposition": "safe",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Array.at"]
+    },
+    "array-findlast": {
+      "title": "Array.prototype.findLast",
+      "disposition": "safe",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Array.findLast"]
+    },
+    "object-hasown": {
+      "title": "Object.hasOwn",
+      "disposition": "safe",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.Object.hasOwn"]
+    },
+    "regex-d-flag": {
+      "title": "RegExp d flag (hasIndices)",
+      "disposition": "safe",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.RegExp.hasIndices"]
+    },
+    "regex-unicode-prop": {
+      "title": "RegExp unicode property escapes (\\p{…})",
+      "disposition": "safe",
+      "unlowerable": true,
+      "bcd": ["javascript.regular_expressions.unicode_character_class_escape"]
+    },
+    "top-level-await": {
+      "title": "Top-level await",
+      "disposition": "safe",
+      "unlowerable": true,
+      "bcd": ["javascript.operators.await.top_level"]
+    },
+    "bigint-literal": {
+      "title": "BigInt",
+      "disposition": "safe",
+      "unlowerable": true,
+      "bcd": ["javascript.builtins.BigInt"]
+    }
+  }
+}

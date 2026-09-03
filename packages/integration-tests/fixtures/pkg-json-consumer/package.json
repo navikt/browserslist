@@ -1,0 +1,7 @@
+{
+  "name": "pkg-json-consumer-fixture",
+  "private": true,
+  "browserslist": [
+    "extends @navikt/browserslist-config"
+  ]
+}

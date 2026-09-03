@@ -1,0 +1,89 @@
+{
+  "name": "@navikt/browserslist-config",
+  "version": "0.1.0",
+  "description": "Nav's shared browser support targets: a browserslist shareable config plus precomputed esbuild, Lightning CSS and Vite helpers.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navikt/browserslist-config.git",
+    "directory": "packages/config"
+  },
+  "homepage": "https://github.com/navikt/browserslist-config#readme",
+  "bugs": "https://github.com/navikt/browserslist-config/issues",
+  "keywords": [
+    "browserslist",
+    "browserslist-config",
+    "browser-support",
+    "nav",
+    "navikt"
+  ],
+  "type": "module",
+  "main": "index.cjs",
+  "types": "index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      },
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./index.cjs"
+      }
+    },
+    "./esbuild": {
+      "types": "./esbuild.d.ts",
+      "default": "./esbuild.js"
+    },
+    "./lightningcss": {
+      "types": "./lightningcss.d.ts",
+      "default": "./lightningcss.js"
+    },
+    "./vite": {
+      "types": "./vite.d.ts",
+      "default": "./vite.js"
+    },
+    "./browsers.json": "./browsers.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "index.d.cts",
+    "esbuild.js",
+    "esbuild.d.ts",
+    "lightningcss.js",
+    "lightningcss.d.ts",
+    "vite.js",
+    "vite.d.ts",
+    "browsers.json"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "peerDependencies": {
+    "vite": ">=7"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "browserslist": "4.28.8",
+    "caniuse-lite": "1.0.30001810",
+    "esbuild": "0.28.2",
+    "lightningcss": "1.33.0"
+  }
+}

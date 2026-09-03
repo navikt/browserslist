@@ -1,0 +1,967 @@
+{
+  "description": "Generated availability verdicts: per-feature native browser minima from @mdn/browser-compat-data, compared against the floor in @navikt/browserslist-config/browsers.json. 0 means \"always supported\", null means \"not shipped\".",
+  "bcd": "8.0.13",
+  "floor": {
+    "chrome": "108",
+    "edge": "108",
+    "firefox": "121",
+    "safari": "16",
+    "ios_saf": "16",
+    "opera": "94",
+    "samsung": "21"
+  },
+  "features": {
+    "promise-withresolvers": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 119,
+        "edge": 119,
+        "firefox": 121,
+        "safari": 17.4,
+        "ios_saf": 17.4,
+        "opera": 105,
+        "samsung": 25
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "promise-try": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 128,
+        "edge": 128,
+        "firefox": 134,
+        "safari": 18.2,
+        "ios_saf": 18.2,
+        "opera": 114,
+        "samsung": 28
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "array-fromasync": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 121,
+        "edge": 121,
+        "firefox": 115,
+        "safari": 16.4,
+        "ios_saf": 16.4,
+        "opera": 107,
+        "samsung": 25
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "object-groupby": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 117,
+        "edge": 117,
+        "firefox": 119,
+        "safari": 17.4,
+        "ios_saf": 17.4,
+        "opera": 103,
+        "samsung": 24
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "map-groupby": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 117,
+        "edge": 117,
+        "firefox": 119,
+        "safari": 17.4,
+        "ios_saf": 17.4,
+        "opera": 103,
+        "samsung": 24
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "map-getorinsert": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 145,
+        "edge": 145,
+        "firefox": 144,
+        "safari": 26.2,
+        "ios_saf": 26.2,
+        "opera": 129,
+        "samsung": null
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "set-methods": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 122,
+        "edge": 122,
+        "firefox": 127,
+        "safari": 17,
+        "ios_saf": 17,
+        "opera": 108,
+        "samsung": 26
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "array-immutable": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 110,
+        "edge": 110,
+        "firefox": 115,
+        "safari": 16,
+        "ios_saf": 16,
+        "opera": 96,
+        "samsung": 21
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "opera"
+      ]
+    },
+    "iterator-helpers": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 117,
+        "edge": 117,
+        "firefox": 131,
+        "safari": 18.4,
+        "ios_saf": 18.4,
+        "opera": 103,
+        "samsung": 24
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "regexp-escape": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 136,
+        "edge": 136,
+        "firefox": 134,
+        "safari": 18.2,
+        "ios_saf": 18.2,
+        "opera": 121,
+        "samsung": 29
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "error-iserror": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 134,
+        "edge": 134,
+        "firefox": 138,
+        "safari": 18.4,
+        "ios_saf": 18.4,
+        "opera": 119,
+        "samsung": 29
+      },
+      "partial": true,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "temporal": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 144,
+        "edge": 144,
+        "firefox": 139,
+        "safari": null,
+        "ios_saf": null,
+        "opera": 128,
+        "samsung": null
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "intl-duration": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 129,
+        "edge": 129,
+        "firefox": 136,
+        "safari": 16.4,
+        "ios_saf": 16.4,
+        "opera": 115,
+        "samsung": 28
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "float16": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 135,
+        "edge": 135,
+        "firefox": 129,
+        "safari": 18.2,
+        "ios_saf": 18.2,
+        "opera": 120,
+        "samsung": 29
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "uint8-base64": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 140,
+        "edge": 140,
+        "firefox": 133,
+        "safari": 18.2,
+        "ios_saf": 18.2,
+        "opera": 124,
+        "samsung": null
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "json-rawjson": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 114,
+        "edge": 114,
+        "firefox": 135,
+        "safari": 18.4,
+        "ios_saf": 18.4,
+        "opera": 100,
+        "samsung": 23
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "regex-lookbehind": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 62,
+        "edge": 79,
+        "firefox": 78,
+        "safari": 16.4,
+        "ios_saf": 16.4,
+        "opera": 49,
+        "samsung": 8
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "regex-v-flag": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 112,
+        "edge": 112,
+        "firefox": 116,
+        "safari": 17,
+        "ios_saf": 17,
+        "opera": 98,
+        "samsung": 23
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "regex-modifiers": {
+      "disposition": "esx",
+      "native": {
+        "chrome": 125,
+        "edge": 125,
+        "firefox": 132,
+        "safari": 26,
+        "ios_saf": 26,
+        "opera": 111,
+        "samsung": 27
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "abortsignal-timeout": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 103,
+        "edge": 103,
+        "firefox": 100,
+        "safari": 16,
+        "ios_saf": 16,
+        "opera": 89,
+        "samsung": 20
+      },
+      "partial": true,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "abortsignal-any": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 116,
+        "edge": 116,
+        "firefox": 124,
+        "safari": 17.4,
+        "ios_saf": 17.4,
+        "opera": 102,
+        "samsung": 24
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "structured-clone": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 98,
+        "edge": 98,
+        "firefox": 94,
+        "safari": 15.4,
+        "ios_saf": 15.4,
+        "opera": 84,
+        "samsung": 18
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "crypto-randomuuid": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 92,
+        "edge": 92,
+        "firefox": 95,
+        "safari": 15.4,
+        "ios_saf": 15.4,
+        "opera": 78,
+        "samsung": 16
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "dialog-showmodal": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 37,
+        "edge": 79,
+        "firefox": 98,
+        "safari": 15.4,
+        "ios_saf": 15.4,
+        "opera": 24,
+        "samsung": 3
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "clipboard-api": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 66,
+        "edge": 79,
+        "firefox": 63,
+        "safari": 13.1,
+        "ios_saf": 13.4,
+        "opera": 53,
+        "samsung": 9
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "popover": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 114,
+        "edge": 114,
+        "firefox": 125,
+        "safari": 17,
+        "ios_saf": 17,
+        "opera": 100,
+        "samsung": 23
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "view-transitions": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 111,
+        "edge": 111,
+        "firefox": 144,
+        "safari": 18,
+        "ios_saf": 18,
+        "opera": 97,
+        "samsung": 22
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "navigation-api": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 102,
+        "edge": 102,
+        "firefox": 147,
+        "safari": 26.2,
+        "ios_saf": 26.2,
+        "opera": 88,
+        "samsung": 19
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "firefox",
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "urlpattern": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 95,
+        "edge": 95,
+        "firefox": 142,
+        "safari": 26,
+        "ios_saf": 26,
+        "opera": 81,
+        "samsung": 17
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "firefox",
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "custom-highlight": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 105,
+        "edge": 105,
+        "firefox": 140,
+        "safari": 17.2,
+        "ios_saf": 17.2,
+        "opera": 91,
+        "samsung": 20
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "firefox",
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "webtransport": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 97,
+        "edge": 97,
+        "firefox": 114,
+        "safari": 26.4,
+        "ios_saf": 26.4,
+        "opera": 83,
+        "samsung": 18
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "trusted-types": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 83,
+        "edge": 83,
+        "firefox": 148,
+        "safari": 26,
+        "ios_saf": 26,
+        "opera": 69,
+        "samsung": 13
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "firefox",
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "reporting-api": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 69,
+        "edge": 79,
+        "firefox": 149,
+        "safari": 16.4,
+        "ios_saf": 16.4,
+        "opera": 56,
+        "samsung": 10
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "firefox",
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "check-visibility": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 105,
+        "edge": 105,
+        "firefox": 106,
+        "safari": 17.4,
+        "ios_saf": 17.4,
+        "opera": 91,
+        "samsung": 20
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "request-idle": {
+      "disposition": "compat",
+      "native": {
+        "chrome": 47,
+        "edge": 79,
+        "firefox": 55,
+        "safari": null,
+        "ios_saf": null,
+        "opera": 34,
+        "samsung": 5
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "optional-chaining": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 80,
+        "edge": 80,
+        "firefox": 74,
+        "safari": 13.1,
+        "ios_saf": 13.4,
+        "opera": 67,
+        "samsung": 13
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "nullish-coalescing": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 80,
+        "edge": 80,
+        "firefox": 72,
+        "safari": 13.1,
+        "ios_saf": 13.4,
+        "opera": 67,
+        "samsung": 13
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "logical-assignment": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 85,
+        "edge": 85,
+        "firefox": 79,
+        "safari": 14,
+        "ios_saf": 14,
+        "opera": 71,
+        "samsung": 14
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "private-methods": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 84,
+        "edge": 84,
+        "firefox": 90,
+        "safari": 15,
+        "ios_saf": 15,
+        "opera": 70,
+        "samsung": 14
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "static-blocks": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 94,
+        "edge": 94,
+        "firefox": 93,
+        "safari": 16.4,
+        "ios_saf": 16.4,
+        "opera": 80,
+        "samsung": 17
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "safari",
+        "ios_saf"
+      ]
+    },
+    "object-spread": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 60,
+        "edge": 79,
+        "firefox": 55,
+        "safari": 11.1,
+        "ios_saf": 11.3,
+        "opera": 47,
+        "samsung": 8.2
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "async-generator": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 63,
+        "edge": 79,
+        "firefox": 57,
+        "safari": 12,
+        "ios_saf": 12,
+        "opera": 50,
+        "samsung": 8
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "using-decl": {
+      "disposition": "syntax",
+      "native": {
+        "chrome": 134,
+        "edge": 134,
+        "firefox": 141,
+        "safari": null,
+        "ios_saf": null,
+        "opera": 119,
+        "samsung": 29
+      },
+      "partial": false,
+      "belowFloor": true,
+      "blocking": [
+        "chrome",
+        "edge",
+        "firefox",
+        "safari",
+        "ios_saf",
+        "opera",
+        "samsung"
+      ]
+    },
+    "array-at": {
+      "disposition": "safe",
+      "native": {
+        "chrome": 92,
+        "edge": 92,
+        "firefox": 90,
+        "safari": 15.4,
+        "ios_saf": 15.4,
+        "opera": 78,
+        "samsung": 16
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "array-findlast": {
+      "disposition": "safe",
+      "native": {
+        "chrome": 97,
+        "edge": 97,
+        "firefox": 104,
+        "safari": 15.4,
+        "ios_saf": 15.4,
+        "opera": 83,
+        "samsung": 18
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "object-hasown": {
+      "disposition": "safe",
+      "native": {
+        "chrome": 93,
+        "edge": 93,
+        "firefox": 92,
+        "safari": 15.4,
+        "ios_saf": 15.4,
+        "opera": 79,
+        "samsung": 17
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "regex-d-flag": {
+      "disposition": "safe",
+      "native": {
+        "chrome": 90,
+        "edge": 90,
+        "firefox": 88,
+        "safari": 15,
+        "ios_saf": 15,
+        "opera": 76,
+        "samsung": 15
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "regex-unicode-prop": {
+      "disposition": "safe",
+      "native": {
+        "chrome": 64,
+        "edge": 79,
+        "firefox": 78,
+        "safari": 11.1,
+        "ios_saf": 11.3,
+        "opera": 51,
+        "samsung": 9
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "top-level-await": {
+      "disposition": "safe",
+      "native": {
+        "chrome": 89,
+        "edge": 89,
+        "firefox": 89,
+        "safari": 15,
+        "ios_saf": 15,
+        "opera": 75,
+        "samsung": 15
+      },
+      "partial": true,
+      "belowFloor": false,
+      "blocking": []
+    },
+    "bigint-literal": {
+      "disposition": "safe",
+      "native": {
+        "chrome": 67,
+        "edge": 79,
+        "firefox": 68,
+        "safari": 14,
+        "ios_saf": 14,
+        "opera": 54,
+        "samsung": 9
+      },
+      "partial": false,
+      "belowFloor": false,
+      "blocking": []
+    }
+  }
+}

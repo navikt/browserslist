@@ -1,0 +1,19 @@
+{
+  "name": "@navikt/browserslist-integration-tests",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Consumer-perspective integration tests for @navikt/browserslist-config and @navikt/browser-support-linting. Never published.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@navikt/browserslist-config": "workspace:*",
+    "@navikt/browser-support-linting": "workspace:*",
+    "browserslist": "4.28.8",
+    "caniuse-lite": "1.0.30001810",
+    "esbuild": "0.28.2",
+    "eslint": "10.9.1",
+    "lightningcss": "1.33.0",
+    "oxlint": "1.80.0"
+  }
+}

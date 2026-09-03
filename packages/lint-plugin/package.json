@@ -1,0 +1,67 @@
+{
+  "name": "@navikt/browser-support-linting",
+  "version": "0.0.0",
+  "description": "ESLint/Oxlint presets that flag Nav's non-lowerable syntax.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navikt/browserslist-config.git",
+    "directory": "packages/lint-plugin"
+  },
+  "homepage": "https://github.com/navikt/browserslist-config#readme",
+  "bugs": "https://github.com/navikt/browserslist-config/issues",
+  "keywords": [
+    "eslint",
+    "oxlint",
+    "browserslist",
+    "browser-support",
+    "navikt"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./oxlint": {
+      "types": "./oxlint.d.ts",
+      "default": "./oxlint.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lib",
+    "features.json",
+    "data",
+    "oxlint.js",
+    "oxlint.d.ts"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "peerDependencies": {
+    "@navikt/browserslist-config": "workspace:^",
+    "eslint": "^10.6.0"
+  },
+  "dependencies": {
+    "eslint-plugin-compat": "^7.0.2",
+    "eslint-plugin-es-x": "^10.0.0"
+  },
+  "devDependencies": {
+    "@mdn/browser-compat-data": "8.0.13",
+    "@navikt/browserslist-config": "workspace:*",
+    "eslint": "10.9.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "test": "node --test"
+  }
+}
