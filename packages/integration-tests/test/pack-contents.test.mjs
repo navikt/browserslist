@@ -11,6 +11,8 @@ const run = promisify(execFile);
 const configDir = path.dirname(require.resolve('@navikt/browserslist-config/package.json'));
 
 const REQUIRED = [
+  'astro.d.ts',
+  'astro.js',
   'browsers.json',
   'esbuild.d.ts',
   'esbuild.js',
