@@ -32,6 +32,12 @@ Generated files are checked in; CI fails if `pnpm generate` produces a diff.
 
 ## Releases
 
+Releasing takes two merges:
+
+- **Add a changeset:** run `pnpm changeset` in your branch and commit the generated `.changeset/*.md` alongside your change.
+- **Merge your PR:** the release workflow opens (or updates) a "Version Packages" PR that bumps versions and writes the CHANGELOGs, but publishes nothing.
+- **Merge the "Version Packages" PR:** this is what actually publishes the new versions to GitHub Packages.
+
 [Changesets](https://github.com/changesets/changesets) + GitHub Actions publish to [GitHub Packages](https://docs.github.com/packages) on merge to `main`. The release workflow reuses the CI workflow, so a publish only happens after the test matrix, the generated-files check and `pnpm check` all pass.
 
 ## Installing in a consuming project
