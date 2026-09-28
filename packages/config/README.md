@@ -87,6 +87,33 @@ export default defineConfig({
 });
 ```
 
+### Astro
+
+Astro hardcodes `build.target: "esnext"` for its builds, so the `/vite` plugin (which only fills unset values) has no effect there. Use the Astro integration instead:
+
+```ts
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import navBrowserTargets from '@navikt/browserslist-config/astro';
+
+export default defineConfig({
+  integrations: [navBrowserTargets()],
+});
+```
+
+<details>
+  <summary>What the integration sets</summary>
+
+1. `environments.client.build.target`: the JS shipped to browsers. Replaced when unset or `"esnext"` (Astro's default); any other value is kept.
+2. `environments.ssr.build.cssTarget` and `environments.prerender.build.cssTarget`: Astro emits page CSS from its server builds, so these govern the CSS in `dist/client`. Only filled when neither the environment nor `vite.build.cssTarget` sets them.
+3. Everything the `/vite` plugin sets (dev-server pre-bundling, Lightning CSS targets when opted in).
+
+Server JS is left at `esnext`.
+
+</details>
+
+Also adding the `browserslist` field to `package.json` has no effect on Astro's build output, but lint tooling (e.g. `eslint-plugin-compat`) reads it.
+
 ### esbuild
 
 ```js
@@ -131,6 +158,7 @@ transform({ filename: 'app.css', code, targets });
 | `@navikt/browserslist-config/esbuild` | `string[]` esbuild/Vite/tsup `target` strings |
 | `@navikt/browserslist-config/lightningcss` | Lightning CSS `targets` object (versions packed `major<<16 \| minor<<8`) |
 | `@navikt/browserslist-config/vite` | Vite plugin factory; named `targets` / `lightningcssTargets` for manual wiring |
+| `@navikt/browserslist-config/astro` | Astro integration factory; same named `targets` / `lightningcssTargets` |
 | `@navikt/browserslist-config/browsers.json` | The source of truth: a flat `{ family: minVersion }` map |
 
 The package is ESM. The one exception is a generated CJS twin of the root (`index.cjs`), served through the `require` condition, because the browserslist `extends` protocol loads configs with a synchronous `require()` that must return a plain array — including from runtimes outside our control (Turbopack's spawned resolver, editor extensions). The ESM helpers additionally export their value as `'module.exports'`, so a stray `require()` of a subpath also returns the raw value on modern Node.

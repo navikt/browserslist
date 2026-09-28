@@ -1,7 +1,7 @@
 {
   "name": "@navikt/browserslist-config",
   "version": "0.1.0",
-  "description": "Nav's shared browser support targets: a browserslist shareable config plus precomputed esbuild, Lightning CSS and Vite helpers.",
+  "description": "Nav's shared browser support targets: a browserslist shareable config plus precomputed esbuild, Lightning CSS, Vite and Astro helpers.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -43,6 +43,10 @@
       "types": "./vite.d.ts",
       "default": "./vite.js"
     },
+    "./astro": {
+      "types": "./astro.d.ts",
+      "default": "./astro.js"
+    },
     "./browsers.json": "./browsers.json",
     "./package.json": "./package.json"
   },
@@ -57,6 +61,8 @@
     "lightningcss.d.ts",
     "vite.js",
     "vite.d.ts",
+    "astro.js",
+    "astro.d.ts",
     "browsers.json"
   ],
   "sideEffects": false,
@@ -64,9 +70,13 @@
     "node": ">=24"
   },
   "peerDependencies": {
+    "astro": ">=7",
     "vite": ">=7"
   },
   "peerDependenciesMeta": {
+    "astro": {
+      "optional": true
+    },
     "vite": {
       "optional": true
     }

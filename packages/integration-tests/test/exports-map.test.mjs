@@ -14,6 +14,7 @@ const SUBPATHS = [
   '@navikt/browserslist-config/esbuild',
   '@navikt/browserslist-config/lightningcss',
   '@navikt/browserslist-config/vite',
+  '@navikt/browserslist-config/astro',
   '@navikt/browserslist-config/browsers.json',
   '@navikt/browserslist-config/package.json',
 ];
@@ -33,6 +34,9 @@ describe('exports map', () => {
     const vite = await import('@navikt/browserslist-config/vite');
     assert.equal(typeof vite.default, 'function');
     assert.equal(vite.default().name, 'nav:browser-targets');
+    const astro = await import('@navikt/browserslist-config/astro');
+    assert.equal(typeof astro.default, 'function');
+    assert.equal(typeof astro.default().hooks['astro:config:setup'], 'function');
   });
 
   it('root require() gets the CJS twin, value-identical to the ESM default', async () => {
@@ -44,12 +48,13 @@ describe('exports map', () => {
 
   // Spawned bare node with static import syntax: a missing named export is a
   // link-time SyntaxError there — the strictest form of this check.
-  it('named ESM exports link in bare Node (lightningcss families, vite escape hatch)', async () => {
+  it('named ESM exports link in bare Node (lightningcss families, vite/astro escape hatches)', async () => {
     const script = [
       'import { safari, chrome } from "@navikt/browserslist-config/lightningcss";',
       'import { targets } from "@navikt/browserslist-config/vite";',
+      'import { targets as astroTargets } from "@navikt/browserslist-config/astro";',
       'import esbuildTargets from "@navikt/browserslist-config/esbuild";',
-      'const same = JSON.stringify(targets) === JSON.stringify(esbuildTargets);',
+      'const same = JSON.stringify(targets) === JSON.stringify(esbuildTargets) && astroTargets === targets;',
       'console.log(JSON.stringify([chrome, safari, same]));',
     ].join('\n');
     const { stdout } = await promisify(execFile)('node', ['--input-type=module', '-e', script], {

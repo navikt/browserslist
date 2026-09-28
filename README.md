@@ -2,7 +2,7 @@
 
 Nav's shared browser-support targets, published as [`@navikt/browserslist-config`](packages/config/README.md), plus the companion lint preset [`@navikt/browser-support-linting`](packages/lint-plugin/README.md).
 
-**→ [Config README with all usage recipes](packages/config/README.md)** (Next.js, Vite, Storybook, esbuild, tsup, webpack, Lightning CSS, PostCSS, lint tooling)
+**→ [Config README with all usage recipes](packages/config/README.md)** (Next.js, Vite, Astro, Storybook, esbuild, tsup, webpack, Lightning CSS, PostCSS, lint tooling)
 
 ## Repository layout
 
