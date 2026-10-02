@@ -1,0 +1,9 @@
+/* Safari 16 needs the -webkit- prefix. */
+.nav-marker-prefix {
+  user-select: none;
+}
+
+/* Chrome 108 lacks oklch(). */
+.nav-marker-color {
+  color: oklch(0.5 0.1 200);
+}

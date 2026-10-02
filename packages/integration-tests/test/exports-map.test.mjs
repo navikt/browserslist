@@ -15,6 +15,7 @@ const SUBPATHS = [
   '@navikt/browserslist-config/lightningcss',
   '@navikt/browserslist-config/vite',
   '@navikt/browserslist-config/astro',
+  '@navikt/browserslist-config/remix',
   '@navikt/browserslist-config/browsers.json',
   '@navikt/browserslist-config/package.json',
 ];
@@ -37,6 +38,8 @@ describe('exports map', () => {
     const astro = await import('@navikt/browserslist-config/astro');
     assert.equal(typeof astro.default, 'function');
     assert.equal(typeof astro.default().hooks['astro:config:setup'], 'function');
+    const remix = await import('@navikt/browserslist-config/remix');
+    assert.equal(typeof remix.default.ios, 'string');
   });
 
   it('root require() gets the CJS twin, value-identical to the ESM default', async () => {

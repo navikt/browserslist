@@ -114,6 +114,46 @@ Server JS is left at `esnext`.
 
 Also adding the `browserslist` field to `package.json` has no effect on Astro's build output, but lint tooling (e.g. `eslint-plugin-compat`) reads it.
 
+### React Router (framework mode)
+
+React Router's Vite plugin doesn't read the `browserslist` field in `package.json` and sets no build targets of its own, so add the `/vite` plugin next to it:
+
+```ts
+// vite.config.ts
+import { reactRouter } from '@react-router/dev/vite';
+import { defineConfig } from 'vite';
+import NavBrowserTargets from '@navikt/browserslist-config/vite';
+
+export default defineConfig({
+  plugins: [reactRouter(), NavBrowserTargets()],
+});
+```
+
+- This covers the client JS and the CSS, which React Router ships from the client build. It works with React Router 7 and 8, on Vite 7 or 8.
+- If your config sets `build.target` (including `"esnext"`), the plugin keeps it. Remove the line to get Nav's targets.
+- Vite applies `build.target` to every environment, so server JS is lowered to the same floor too. Node runs it fine.
+
+### Remix 3
+
+Remix 3 doesn't use Vite. `remix/assets` compiles scripts and styles itself and lowers nothing unless it gets a `target`. Pass the `/remix` export:
+
+```ts
+import { createAssetServer } from 'remix/assets';
+import target from '@navikt/browserslist-config/remix';
+
+let assetServer = createAssetServer({
+  basePath: '/assets',
+  allowFiles: ['app/**'],
+  target,
+});
+```
+
+`remix.json` doesn't accept `target`. If you load your asset settings with `loadConfig()`, add it in code: `createAssetServer({ ...config.assets, target })`.
+
+### Remix v2
+
+Not supported. The classic Remix compiler has no browser-target setting, and Remix v2's Vite plugin needs Vite 5 or 6, below this package's Vite 7 minimum. Move to React Router (Remix v2's successor) and follow the section above.
+
 ### esbuild
 
 ```js
@@ -159,6 +199,7 @@ transform({ filename: 'app.css', code, targets });
 | `@navikt/browserslist-config/lightningcss` | Lightning CSS `targets` object (versions packed `major<<16 \| minor<<8`) |
 | `@navikt/browserslist-config/vite` | Vite plugin factory; named `targets` / `lightningcssTargets` for manual wiring |
 | `@navikt/browserslist-config/astro` | Astro integration factory; same named `targets` / `lightningcssTargets` |
+| `@navikt/browserslist-config/remix` | Remix 3 `createAssetServer` `target` object (version strings; iOS Safari keyed `ios`) |
 | `@navikt/browserslist-config/browsers.json` | The source of truth: a flat `{ family: minVersion }` map |
 
 The package is ESM. The one exception is a generated CJS twin of the root (`index.cjs`), served through the `require` condition, because the browserslist `extends` protocol loads configs with a synchronous `require()` that must return a plain array — including from runtimes outside our control (Turbopack's spawned resolver, editor extensions). The ESM helpers additionally export their value as `'module.exports'`, so a stray `require()` of a subpath also returns the raw value on modern Node.

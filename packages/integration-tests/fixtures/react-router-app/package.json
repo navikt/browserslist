@@ -1,0 +1,10 @@
+{
+  "name": "react-router-app-fixture",
+  "private": true,
+  "type": "module",
+  "//": "Not installed — resolves from the integration-tests package. Listed because react-router reads `dependencies`: without isbot it runs a package-manager install; @react-router/node selects the Node server entry.",
+  "dependencies": {
+    "@react-router/node": "*",
+    "isbot": "*"
+  }
+}

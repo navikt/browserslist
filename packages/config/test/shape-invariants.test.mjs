@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import queries from '../index.js';
 import esbuildTargets from '../esbuild.js';
 import lightningcssTargets, { safari as lcssSafari } from '../lightningcss.js';
+import remixTarget from '../remix.js';
 
 const require = createRequire(import.meta.url);
 const pkgDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -34,7 +35,7 @@ describe('shareable-config protocol invariants (browserslist + browserslist-rs)'
   });
 
   it('every export survives a JSON round-trip unchanged', () => {
-    for (const value of [queries, esbuildTargets, lightningcssTargets]) {
+    for (const value of [queries, esbuildTargets, lightningcssTargets, remixTarget]) {
       assert.deepEqual(JSON.parse(JSON.stringify(value)), value);
     }
   });
@@ -57,5 +58,16 @@ describe('cross-export consistency', () => {
     }
     assert.deepEqual(Object.keys(lightningcssTargets).sort(), Object.keys(browsers).sort());
     assert.equal(lcssSafari, lightningcssTargets.safari);
+  });
+
+  it('remix target has every family as a version string, with ios_saf keyed as ios', () => {
+    const expected = Object.fromEntries(
+      Object.entries(browsers).map(([family, version]) => [family === 'ios_saf' ? 'ios' : family, version]),
+    );
+    assert.deepEqual(remixTarget, expected);
+    for (const version of Object.values(remixTarget)) {
+      // remix/assets accepts only "X", "X.Y" or "X.Y.Z" strings.
+      assert.match(version, /^\d+(\.\d+){0,2}$/);
+    }
   });
 });

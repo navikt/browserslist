@@ -11,6 +11,7 @@
  *                   root keeps a real CJS twin
  *   esbuild.js      esbuild/Vite build.target strings (ESM)
  *   lightningcss.js Lightning CSS `targets` object (ESM; versions packed as major<<16|minor<<8|patch)
+ *   remix.js        Remix 3 `remix/assets` `target` object (ESM; version strings, `ios` not `ios_saf`)
  *   README.md       support table between BEGIN/END generated-support-table markers
  *
  * Each ESM module also exports its value under the name 'module.exports', so a
@@ -41,6 +42,20 @@ const ESBUILD_FAMILIES = {
   // Samsung Internet is Chromium-based (v21 = Chromium 108); esbuild has no
   // "samsung" engine, so the chrome floor covers it.
   samsung: null,
+};
+
+/**
+ * caniuse family -> Remix 3 `remix/assets` target key. Its target validator
+ * rejects unknown keys, so every family needs an explicit mapping.
+ */
+const REMIX_FAMILIES = {
+  chrome: 'chrome',
+  edge: 'edge',
+  firefox: 'firefox',
+  safari: 'safari',
+  ios_saf: 'ios',
+  opera: 'opera',
+  samsung: 'samsung',
 };
 
 const FAMILY_LABELS = {
@@ -76,10 +91,17 @@ export function derive(browsers) {
     .map(([family, packed]) => `export const ${identifier(family)} = ${packed};`)
     .join('\n');
 
+  const remixTarget = Object.fromEntries(
+    families
+      .map((f) => [REMIX_FAMILIES[f] ?? unknownFamily(f, 'REMIX_FAMILIES'), browsers[f]])
+      .sort(([a], [b]) => a.localeCompare(b)),
+  );
+
   return {
     queries,
     esbuildTargets: dedupedSorted,
     lightningcssTargets,
+    remixTarget,
     files: {
       'index.js': [
         HEADER,
@@ -107,6 +129,13 @@ export function derive(browsers) {
         'export default targets;\n',
         REQUIRE_INTEROP('targets'),
       ].join(''),
+      'remix.js': [
+        HEADER,
+        '// Remix 3 asset server `target` (remix/assets createAssetServer).\n',
+        `const target = ${literal(remixTarget)};\n`,
+        'export default target;\n',
+        REQUIRE_INTEROP('target'),
+      ].join(''),
     },
   };
 }
@@ -121,8 +150,8 @@ function identifier(key) {
   return key;
 }
 
-function unknownFamily(f) {
-  throw new Error(`browsers.json family "${f}" has no esbuild mapping — add it to ESBUILD_FAMILIES in generate.mjs`);
+function unknownFamily(f, table = 'ESBUILD_FAMILIES') {
+  throw new Error(`browsers.json family "${f}" has no mapping — add it to ${table} in generate.mjs`);
 }
 
 function literal(value) {
@@ -215,7 +244,7 @@ async function main() {
   const notes = validateResolution(browsers, derived.queries);
   for (const note of notes) console.warn(`note: ${note}`);
 
-  for (const value of [derived.queries, derived.esbuildTargets, derived.lightningcssTargets]) {
+  for (const value of [derived.queries, derived.esbuildTargets, derived.lightningcssTargets, derived.remixTarget]) {
     const roundTripped = JSON.parse(JSON.stringify(value));
     if (JSON.stringify(roundTripped) !== JSON.stringify(value)) {
       throw new Error('An export is not JSON-serializable — browserslist-rs consumers would break');

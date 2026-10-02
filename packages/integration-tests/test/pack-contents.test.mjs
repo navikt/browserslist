@@ -23,6 +23,8 @@ const REQUIRED = [
   'lightningcss.d.ts',
   'lightningcss.js',
   'package.json',
+  'remix.d.ts',
+  'remix.js',
   'vite.d.ts',
   'vite.js',
 ];
