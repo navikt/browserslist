@@ -1,5 +1,12 @@
 # @navikt/browser-support-linting
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [9f69223]
+  - @navikt/browserslist-config@0.3.0
+
 ## 0.1.1
 
 ### Patch Changes
