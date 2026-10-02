@@ -1,5 +1,11 @@
 # @navikt/browserslist-config
 
+## 0.3.0
+
+### Minor Changes
+
+- 9f69223: Add `@navikt/browserslist-config/remix`, the Remix 3 `createAssetServer` `target` object. Without a `target`, `remix/assets` doesn't lower any scripts or styles. The README now covers React Router (use the `/vite` plugin), Remix 3, and Remix v2 (not supported).
+
 ## 0.2.0
 
 ### Minor Changes
