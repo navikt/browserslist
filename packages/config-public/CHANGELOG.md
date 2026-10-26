@@ -1,5 +1,12 @@
 # @navikt/browserslist-config
 
+## 0.3.0
+
+### Minor Changes
+
+- 9f69223: Add `@navikt/browserslist-config-public/remix`, the Remix 3 `createAssetServer` `target` object. Without a `target`, `remix/assets` doesn't lower any scripts or styles. The README now covers React Router (use the `/vite` plugin), Remix 3, and Remix v2 (not supported).
+- 4dfaf5e: Rename `@navikt/browserslist-config` to `@navikt/browserslist-config-public` to make clear the floor is for public/user-facing Nav sites, not internal or caseworker-facing apps. Update your dependency and any `extends @navikt/browserslist-config` / import paths to the new name; the targets themselves are unchanged.
+
 ## 0.2.0
 
 ### Minor Changes
