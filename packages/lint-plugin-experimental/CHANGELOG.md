@@ -1,5 +1,17 @@
 # @navikt/browser-support-linting
 
+## 0.2.0
+
+### Minor Changes
+
+- 4dfaf5e: Mark the plugin as experimental and not yet ready for use. The peer dependency is now `@navikt/browserslist-config-public` (renamed from `@navikt/browserslist-config`).
+
+### Patch Changes
+
+- Updated dependencies [9f69223]
+- Updated dependencies [4dfaf5e]
+  - @navikt/browserslist-config-public@0.3.0
+
 ## 0.1.1
 
 ### Patch Changes
