@@ -11,7 +11,7 @@ const require = createRequire(import.meta.url);
 const pkgDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 
 const featuresJson = JSON.parse(readFileSync(path.join(pkgDir, 'features.json'), 'utf8'));
-const browsers = require('@navikt/browserslist-config/browsers.json');
+const browsers = require('@navikt/browserslist-config-public/browsers.json');
 const bcd = require('@mdn/browser-compat-data');
 
 const derived = derive(featuresJson, browsers, bcd, esxPlugin, bcd.__meta.version);

@@ -4,7 +4,7 @@ import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 // Same module `remix/assets` re-exports in Remix 3.
 import { createAssetServer } from '@remix-run/assets';
-import target from '@navikt/browserslist-config/remix';
+import target from '@navikt/browserslist-config-public/remix';
 
 const testsDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const fixtureDir = path.join(testsDir, 'fixtures', 'remix-assets-app');

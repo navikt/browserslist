@@ -4,10 +4,10 @@ import path from 'node:path';
 import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import browserslist from 'browserslist';
-import queries from '@navikt/browserslist-config';
+import queries from '@navikt/browserslist-config-public';
 
 const require = createRequire(import.meta.url);
-const browsers = require('@navikt/browserslist-config/browsers.json');
+const browsers = require('@navikt/browserslist-config-public/browsers.json');
 
 const testsDir = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const fixtures = {

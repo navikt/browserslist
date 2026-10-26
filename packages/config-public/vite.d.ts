@@ -6,7 +6,7 @@ import type { Plugin } from 'vite';
  * in) wherever the config has not already set them. User values always win.
  *
  * ```ts
- * import navBrowserTargets from '@navikt/browserslist-config/vite';
+ * import navBrowserTargets from '@navikt/browserslist-config-public/vite';
  * export default defineConfig({ plugins: [navBrowserTargets()] });
  * ```
  *
@@ -14,7 +14,7 @@ import type { Plugin } from 'vite';
  * plugin applies:
  *
  * ```ts
- * import { targets } from '@navikt/browserslist-config/vite';
+ * import { targets } from '@navikt/browserslist-config-public/vite';
  * export default defineConfig({ build: { target: targets } });
  * ```
  */

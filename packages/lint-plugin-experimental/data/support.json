@@ -1,5 +1,5 @@
 {
-  "description": "Generated availability verdicts: per-feature native browser minima from @mdn/browser-compat-data, compared against the floor in @navikt/browserslist-config/browsers.json. 0 means \"always supported\", null means \"not shipped\".",
+  "description": "Generated availability verdicts: per-feature native browser minima from @mdn/browser-compat-data, compared against the floor in @navikt/browserslist-config-public/browsers.json. 0 means \"always supported\", null means \"not shipped\".",
   "bcd": "8.0.13",
   "floor": {
     "chrome": "108",

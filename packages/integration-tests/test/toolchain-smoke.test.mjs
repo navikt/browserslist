@@ -3,9 +3,9 @@ import { describe, it } from 'node:test';
 import browserslist from 'browserslist';
 import { transformSync } from 'esbuild';
 import { browserslistToTargets, transform as lightningcssTransform } from 'lightningcss';
-import queries from '@navikt/browserslist-config';
-import esbuildTargets from '@navikt/browserslist-config/esbuild';
-import lightningcssTargets from '@navikt/browserslist-config/lightningcss';
+import queries from '@navikt/browserslist-config-public';
+import esbuildTargets from '@navikt/browserslist-config-public/esbuild';
+import lightningcssTargets from '@navikt/browserslist-config-public/lightningcss';
 
 describe('esbuild', () => {
   it('accepts the target strings and lowers class static blocks (Safari floor < 16.4)', () => {

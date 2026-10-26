@@ -6,7 +6,7 @@
  * package.json instead:
  *
  * ```json
- * { "browserslist": ["extends @navikt/browserslist-config"] }
+ * { "browserslist": ["extends @navikt/browserslist-config-public"] }
  * ```
  */
 declare const queries: string[];

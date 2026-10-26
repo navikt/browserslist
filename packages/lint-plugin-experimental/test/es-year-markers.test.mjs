@@ -4,7 +4,7 @@ import { describe, it } from 'node:test';
 import { levels } from '../lib/levels.js';
 
 const require = createRequire(import.meta.url);
-const browsers = require('@navikt/browserslist-config/browsers.json');
+const browsers = require('@navikt/browserslist-config-public/browsers.json');
 const support = require('../data/support.json');
 
 const FAMILIES = Object.keys(browsers);

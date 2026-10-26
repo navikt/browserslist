@@ -5,7 +5,7 @@
  *
  * ```ts
  * import { createAssetServer } from 'remix/assets';
- * import target from '@navikt/browserslist-config/remix';
+ * import target from '@navikt/browserslist-config-public/remix';
  * let assetServer = createAssetServer({ basePath: '/assets', allowFiles: ['app/**'], target });
  * ```
  */

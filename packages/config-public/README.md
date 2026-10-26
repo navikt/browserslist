@@ -1,6 +1,8 @@
-# @navikt/browserslist-config
+# @navikt/browserslist-config-public
 
-Nav's shared browser support targets, as code: a [browserslist shareable config](https://github.com/browserslist/browserslist#shareable-configs) plus helpers for the most popular bundlers.
+Nav's shared browser support targets for **public-facing sites** (nav.no and other services used by citizens, employers and partners), as code: a [browserslist shareable config](https://github.com/browserslist/browserslist#shareable-configs) plus helpers for the most popular bundlers.
+
+> **Scope:** this floor is for user-facing Nav sites, where we don't control the visitor's browser. It is **not** meant for internal or caseworker-facing apps (saksbehandlerflater) — those run on managed devices and can target a different (newer) floor.
 
 > **Status: 0.x — floors are provisional.** They operationalize the design system's (Aksel's) CSS requirements today and will be validated against nav.no analytics before 1.0. Expect deliberate, changelogged floor bumps; see [versioning](#versioning-and-floor-changes).
 
@@ -24,12 +26,12 @@ Nav's shared browser support targets, as code: a [browserslist shareable config]
 - It turns Nav's prose policy — [Hvilke nettlesere, enheter og hjelpemidler støtter vi?](https://aksel.nav.no/god-praksis/artikler/nettleserstotte) (support browsers used by more than 2 % of our users, no Internet Explorer, ~70 % mobile traffic) — into pinned, machine-readable versions for the first time.
 - **Why pinned versions** instead of `"last 2 versions"`, usage percentages, or `baseline widely available`: pinned floors resolve identically on every machine and every day, give lint tooling an exact contract, produce reviewable diffs when the floor moves, and are immune to the class of bugs where stale caniuse data silently changes what a dynamic query resolves to ([vercel/next.js#92091](https://github.com/vercel/next.js/issues/92091)).
 
-Your bundler *lowers syntax* to this floor — it does **not** polyfill runtime APIs. `Array.prototype.toSorted`, `Set.prototype.union`, `URLPattern` and friends need a polyfill or a feature check if the floor doesn't cover them. (Companion lint rules that flag exactly this are planned; `eslint-plugin-compat` works with this config today.)
+Your bundler *lowers syntax* to this floor — it does **not** polyfill runtime APIs. `Array.prototype.toSorted`, `Set.prototype.union`, `URLPattern` and friends need a polyfill or a feature check if the floor doesn't cover them. (Companion lint rules that flag exactly this are in progress in the [experimental lint plugin](../lint-plugin-experimental/README.md); `eslint-plugin-compat` works with this config today.)
 
 ## Install
 
 ```sh
-npm install --save-dev @navikt/browserslist-config
+npm install --save-dev @navikt/browserslist-config-public
 ```
 
 (or `pnpm add -D` / `yarn add -D` / `bun add -d`.)
@@ -42,7 +44,7 @@ Add to your **package.json**:
 
 ```json
 {
-  "browserslist": ["extends @navikt/browserslist-config"]
+  "browserslist": ["extends @navikt/browserslist-config-public"]
 }
 ```
 
@@ -55,7 +57,7 @@ A plugin is available:
 ```ts
 // vite.config.ts
 import { defineConfig } from 'vite';
-import NavBrowserTargets from '@navikt/browserslist-config/vite';
+import NavBrowserTargets from '@navikt/browserslist-config-public/vite';
 
 export default defineConfig({
   plugins: [NavBrowserTargets()],
@@ -75,7 +77,7 @@ It's also possible to explicitly import/set the same config attributes if needed
 
 ```ts
 import { defineConfig } from 'vite';
-import { targets, lightningcssTargets } from '@navikt/browserslist-config/vite';
+import { targets, lightningcssTargets } from '@navikt/browserslist-config-public/vite';
 
 // lightningcssTargets not shown in-use here but is available
 
@@ -94,7 +96,7 @@ Astro hardcodes `build.target: "esnext"` for its builds, so the `/vite` plugin (
 ```ts
 // astro.config.mjs
 import { defineConfig } from 'astro/config';
-import navBrowserTargets from '@navikt/browserslist-config/astro';
+import navBrowserTargets from '@navikt/browserslist-config-public/astro';
 
 export default defineConfig({
   integrations: [navBrowserTargets()],
@@ -122,7 +124,7 @@ React Router's Vite plugin doesn't read the `browserslist` field in `package.jso
 // vite.config.ts
 import { reactRouter } from '@react-router/dev/vite';
 import { defineConfig } from 'vite';
-import NavBrowserTargets from '@navikt/browserslist-config/vite';
+import NavBrowserTargets from '@navikt/browserslist-config-public/vite';
 
 export default defineConfig({
   plugins: [reactRouter(), NavBrowserTargets()],
@@ -139,7 +141,7 @@ Remix 3 doesn't use Vite. `remix/assets` compiles scripts and styles itself and 
 
 ```ts
 import { createAssetServer } from 'remix/assets';
-import target from '@navikt/browserslist-config/remix';
+import target from '@navikt/browserslist-config-public/remix';
 
 let assetServer = createAssetServer({
   basePath: '/assets',
@@ -158,7 +160,7 @@ Not supported. The classic Remix compiler has no browser-target setting, and Rem
 
 ```js
 import esbuild from 'esbuild';
-import target from '@navikt/browserslist-config/esbuild';
+import target from '@navikt/browserslist-config-public/esbuild';
 
 await esbuild.build({ entryPoints: ['src/app.ts'], bundle: true, target });
 ```
@@ -166,7 +168,7 @@ await esbuild.build({ entryPoints: ['src/app.ts'], bundle: true, target });
 CLI:
 
 ```sh
-esbuild src/app.ts --bundle --target=$(node -p "require('@navikt/browserslist-config/esbuild').join(',')")
+esbuild src/app.ts --bundle --target=$(node -p "require('@navikt/browserslist-config-public/esbuild').join(',')")
 ```
 
 ### tsup
@@ -176,7 +178,7 @@ tsup has no browserslist support; pass the esbuild targets explicitly:
 ```ts
 // tsup.config.ts
 import { defineConfig } from 'tsup';
-import target from '@navikt/browserslist-config/esbuild';
+import target from '@navikt/browserslist-config-public/esbuild';
 
 export default defineConfig({ target });
 ```
@@ -185,7 +187,7 @@ export default defineConfig({ target });
 
 ```js
 import { transform } from 'lightningcss';
-import targets from '@navikt/browserslist-config/lightningcss';
+import targets from '@navikt/browserslist-config-public/lightningcss';
 
 transform({ filename: 'app.css', code, targets });
 ```
@@ -194,13 +196,13 @@ transform({ filename: 'app.css', code, targets });
 
 | Import | Returns |
 | --- | --- |
-| `@navikt/browserslist-config` | `string[]` browserslist queries — the shareable config (`extends` target) |
-| `@navikt/browserslist-config/esbuild` | `string[]` esbuild/Vite/tsup `target` strings |
-| `@navikt/browserslist-config/lightningcss` | Lightning CSS `targets` object (versions packed `major<<16 \| minor<<8`) |
-| `@navikt/browserslist-config/vite` | Vite plugin factory; named `targets` / `lightningcssTargets` for manual wiring |
-| `@navikt/browserslist-config/astro` | Astro integration factory; same named `targets` / `lightningcssTargets` |
-| `@navikt/browserslist-config/remix` | Remix 3 `createAssetServer` `target` object (version strings; iOS Safari keyed `ios`) |
-| `@navikt/browserslist-config/browsers.json` | The source of truth: a flat `{ family: minVersion }` map |
+| `@navikt/browserslist-config-public` | `string[]` browserslist queries — the shareable config (`extends` target) |
+| `@navikt/browserslist-config-public/esbuild` | `string[]` esbuild/Vite/tsup `target` strings |
+| `@navikt/browserslist-config-public/lightningcss` | Lightning CSS `targets` object (versions packed `major<<16 \| minor<<8`) |
+| `@navikt/browserslist-config-public/vite` | Vite plugin factory; named `targets` / `lightningcssTargets` for manual wiring |
+| `@navikt/browserslist-config-public/astro` | Astro integration factory; same named `targets` / `lightningcssTargets` |
+| `@navikt/browserslist-config-public/remix` | Remix 3 `createAssetServer` `target` object (version strings; iOS Safari keyed `ios`) |
+| `@navikt/browserslist-config-public/browsers.json` | The source of truth: a flat `{ family: minVersion }` map |
 
 The package is ESM. The one exception is a generated CJS twin of the root (`index.cjs`), served through the `require` condition, because the browserslist `extends` protocol loads configs with a synchronous `require()` that must return a plain array — including from runtimes outside our control (Turbopack's spawned resolver, editor extensions). The ESM helpers additionally export their value as `'module.exports'`, so a stray `require()` of a subpath also returns the raw value on modern Node.
 

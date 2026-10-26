@@ -8,8 +8,8 @@
   "scripts": {
     "generate": "pnpm -r generate",
     "test": "pnpm -r test",
-    "check:publint": "publint packages/config && publint packages/lint-plugin",
-    "check:attw": "attw --pack packages/config --profile node16 --ignore-rules cjs-resolves-to-esm && attw --pack packages/lint-plugin --profile node16 --ignore-rules cjs-resolves-to-esm",
+    "check:publint": "publint packages/config-public && publint packages/lint-plugin-experimental",
+    "check:attw": "attw --pack packages/config-public --profile node16 --ignore-rules cjs-resolves-to-esm && attw --pack packages/lint-plugin-experimental --profile node16 --ignore-rules cjs-resolves-to-esm",
     "check": "pnpm check:publint && pnpm check:attw",
     "changeset": "changeset",
     "release": "pnpm changeset publish"

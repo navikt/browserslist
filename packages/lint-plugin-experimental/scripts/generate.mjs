@@ -1,7 +1,7 @@
 /**
  * Generates every derived artifact from features.json (the curated source of
  * truth) crossed with @mdn/browser-compat-data and the floor in
- * @navikt/browserslist-config/browsers.json:
+ * @navikt/browserslist-config-public/browsers.json:
  *
  *   data/support.json         per-feature per-family native minima, belowFloor
  *                             verdicts and blocking families (+ BCD version)
@@ -64,7 +64,7 @@ const FAMILY_LABELS = {
 const DISPOSITIONS = new Set(['esx', 'compat', 'syntax', 'safe']);
 const PLUGIN_NS = 'browser-support';
 const RESTRICT_CONFIG = 'flat/restrict-to-es2021';
-const DOCS_BASE = 'https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin';
+const DOCS_BASE = 'https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental';
 
 /** Walks a dotted BCD key to its __compat node, or throws. */
 export function resolveBcdKey(bcd, key) {
@@ -260,7 +260,7 @@ export function derive({ levels, features }, browsers, bcd, esxPlugin, bcdVersio
 
   const supportJson = {
     description:
-      'Generated availability verdicts: per-feature native browser minima from @mdn/browser-compat-data, compared against the floor in @navikt/browserslist-config/browsers.json. 0 means "always supported", null means "not shipped".',
+      'Generated availability verdicts: per-feature native browser minima from @mdn/browser-compat-data, compared against the floor in @navikt/browserslist-config-public/browsers.json. 0 means "always supported", null means "not shipped".',
     bcd: bcdVersion,
     floor: browsers,
     features: support,
@@ -324,7 +324,7 @@ export function featureTable({ features }, support, wrappedRules) {
 
 async function main() {
   const featuresJson = JSON.parse(readFileSync(path.join(pkgDir, 'features.json'), 'utf8'));
-  const browsers = require('@navikt/browserslist-config/browsers.json');
+  const browsers = require('@navikt/browserslist-config-public/browsers.json');
   const bcd = require('@mdn/browser-compat-data');
   const { default: esxPlugin } = await import('eslint-plugin-es-x');
 

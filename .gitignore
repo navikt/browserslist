@@ -2,7 +2,7 @@
 node_modules/
 
 # Internal-only data (private-repo inventory from the org scan) — never commit.
-# Root-anchored: packages/config/data/ (scrubbed, publishable) is NOT ignored.
+# Root-anchored: packages/config-public/data/ (scrubbed, publishable) is NOT ignored.
 /data/
 
 # Build/test artifacts

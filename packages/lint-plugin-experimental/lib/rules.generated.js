@@ -9,7 +9,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.promise.with-resolvers`) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#promise-withresolvers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#promise-withresolvers"
   },
   {
     "feature": "promise-try",
@@ -18,7 +18,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.promise.try`) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#promise-try"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#promise-try"
   },
   {
     "feature": "array-fromasync",
@@ -27,7 +27,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.array.from-async`) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#array-fromasync"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#array-fromasync"
   },
   {
     "feature": "object-groupby",
@@ -36,7 +36,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.object.group-by`) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#object-groupby"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#object-groupby"
   },
   {
     "feature": "map-groupby",
@@ -45,7 +45,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.map.group-by`) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#map-groupby"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#map-groupby"
   },
   {
     "feature": "map-getorinsert",
@@ -55,7 +55,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Very new (2025 proposal); use `map.get(k) ?? map.set(k, v).get(k)` or a polyfill.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#map-getorinsert"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#map-getorinsert"
   },
   {
     "feature": "map-getorinsert",
@@ -65,7 +65,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Very new (2025 proposal); use `map.get(k) ?? map.set(k, v).get(k)` or a polyfill.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#map-getorinsert"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#map-getorinsert"
   },
   {
     "feature": "map-getorinsert",
@@ -75,7 +75,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Very new (2025 proposal); use `map.get(k) ?? map.set(k, v).get(k)` or a polyfill.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#map-getorinsert"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#map-getorinsert"
   },
   {
     "feature": "map-getorinsert",
@@ -85,7 +85,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Very new (2025 proposal); use `map.get(k) ?? map.set(k, v).get(k)` or a polyfill.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#map-getorinsert"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#map-getorinsert"
   },
   {
     "feature": "set-methods",
@@ -95,7 +95,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.set.union` etc.) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#set-methods"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#set-methods"
   },
   {
     "feature": "set-methods",
@@ -105,7 +105,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.set.union` etc.) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#set-methods"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#set-methods"
   },
   {
     "feature": "set-methods",
@@ -115,7 +115,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.set.union` etc.) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#set-methods"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#set-methods"
   },
   {
     "feature": "set-methods",
@@ -125,7 +125,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.set.union` etc.) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#set-methods"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#set-methods"
   },
   {
     "feature": "set-methods",
@@ -135,7 +135,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.set.union` etc.) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#set-methods"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#set-methods"
   },
   {
     "feature": "set-methods",
@@ -145,7 +145,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.set.union` etc.) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#set-methods"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#set-methods"
   },
   {
     "feature": "set-methods",
@@ -155,7 +155,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.set.union` etc.) or feature-guard.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#set-methods"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#set-methods"
   },
   {
     "feature": "array-immutable",
@@ -165,7 +165,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Below Nav's browser floor — needs Chrome 110+ (floor 108), Edge 110+ (floor 108), Opera 96+ (floor 94). Polyfill via core-js (`esnext.array.to-sorted` etc.), or copy first: `[...arr].sort()`.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#array-immutable"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#array-immutable"
   },
   {
     "feature": "array-immutable",
@@ -175,7 +175,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Below Nav's browser floor — needs Chrome 110+ (floor 108), Edge 110+ (floor 108), Opera 96+ (floor 94). Polyfill via core-js (`esnext.array.to-sorted` etc.), or copy first: `[...arr].sort()`.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#array-immutable"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#array-immutable"
   },
   {
     "feature": "array-immutable",
@@ -185,7 +185,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Below Nav's browser floor — needs Chrome 110+ (floor 108), Edge 110+ (floor 108), Opera 96+ (floor 94). Polyfill via core-js (`esnext.array.to-sorted` etc.), or copy first: `[...arr].sort()`.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#array-immutable"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#array-immutable"
   },
   {
     "feature": "array-immutable",
@@ -195,14 +195,14 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Below Nav's browser floor — needs Chrome 110+ (floor 108), Edge 110+ (floor 108), Opera 96+ (floor 94). Polyfill via core-js (`esnext.array.to-sorted` etc.), or copy first: `[...arr].sort()`.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#array-immutable"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#array-immutable"
   },
   {
     "feature": "iterator-helpers",
     "esxId": "no-iterator",
     "options": null,
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -212,7 +212,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -222,7 +222,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -232,7 +232,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -242,7 +242,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -252,7 +252,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -262,7 +262,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -272,7 +272,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -282,7 +282,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -292,7 +292,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -302,7 +302,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "iterator-helpers",
@@ -312,7 +312,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.iterator.*`) or spread into an array first.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#iterator-helpers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#iterator-helpers"
   },
   {
     "feature": "regexp-escape",
@@ -321,7 +321,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.regexp.escape`) or escape manually.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#regexp-escape"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#regexp-escape"
   },
   {
     "feature": "error-iserror",
@@ -330,14 +330,14 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Use `instanceof Error` (cross-realm caveats aside) or polyfill via core-js.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#error-iserror"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#error-iserror"
   },
   {
     "feature": "temporal",
     "esxId": "no-temporal",
     "options": null,
     "messageSuffix": " Not supported at Nav's browser floor. Not shipped in Safari at all; use `@js-temporal/polyfill` deliberately or date-fns.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#temporal"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#temporal"
   },
   {
     "feature": "intl-duration",
@@ -346,14 +346,14 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Feature-guard (`'DurationFormat' in Intl`) with a manual fallback.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#intl-duration"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#intl-duration"
   },
   {
     "feature": "float16",
     "esxId": "no-float16array",
     "options": null,
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.float16-array`) or avoid half-precision.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#float16"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#float16"
   },
   {
     "feature": "float16",
@@ -362,7 +362,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.float16-array`) or avoid half-precision.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#float16"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#float16"
   },
   {
     "feature": "float16",
@@ -372,7 +372,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.float16-array`) or avoid half-precision.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#float16"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#float16"
   },
   {
     "feature": "uint8-base64",
@@ -381,7 +381,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.uint8-array.to-base64` etc.) or use `atob`/`btoa` helpers.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#uint8-base64"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#uint8-base64"
   },
   {
     "feature": "uint8-base64",
@@ -390,7 +390,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.uint8-array.to-base64` etc.) or use `atob`/`btoa` helpers.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#uint8-base64"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#uint8-base64"
   },
   {
     "feature": "uint8-base64",
@@ -400,7 +400,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.uint8-array.to-base64` etc.) or use `atob`/`btoa` helpers.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#uint8-base64"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#uint8-base64"
   },
   {
     "feature": "uint8-base64",
@@ -410,7 +410,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.uint8-array.to-base64` etc.) or use `atob`/`btoa` helpers.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#uint8-base64"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#uint8-base64"
   },
   {
     "feature": "uint8-base64",
@@ -420,7 +420,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.uint8-array.to-base64` etc.) or use `atob`/`btoa` helpers.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#uint8-base64"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#uint8-base64"
   },
   {
     "feature": "uint8-base64",
@@ -430,7 +430,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Polyfill via core-js (`esnext.uint8-array.to-base64` etc.) or use `atob`/`btoa` helpers.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#uint8-base64"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#uint8-base64"
   },
   {
     "feature": "json-rawjson",
@@ -439,7 +439,7 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Feature-guard (`'rawJSON' in JSON`); no lightweight polyfill exists.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#json-rawjson"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#json-rawjson"
   },
   {
     "feature": "json-rawjson",
@@ -448,27 +448,27 @@ export const wrappedRules = [
       "allowTestedProperty": true
     },
     "messageSuffix": " Not supported at Nav's browser floor. Feature-guard (`'rawJSON' in JSON`); no lightweight polyfill exists.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#json-rawjson"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#json-rawjson"
   },
   {
     "feature": "regex-lookbehind",
     "esxId": "no-regexp-lookbehind-assertions",
     "options": null,
     "messageSuffix": " Below Nav's browser floor — needs Safari 16.4+ (floor 16), iOS Safari 16.4+ (floor 16). Cannot be polyfilled — a lookbehind in a regex literal throws at parse time on old Safari. Rewrite the pattern (capture + post-process).",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#regex-lookbehind"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#regex-lookbehind"
   },
   {
     "feature": "regex-v-flag",
     "esxId": "no-regexp-v-flag",
     "options": null,
     "messageSuffix": " Not supported at Nav's browser floor. Cannot be polyfilled — use the `u` flag and expand the set operations manually.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#regex-v-flag"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#regex-v-flag"
   },
   {
     "feature": "regex-modifiers",
     "esxId": "no-regexp-modifiers",
     "options": null,
     "messageSuffix": " Not supported at Nav's browser floor. Cannot be polyfilled — split the pattern or apply the flag to the whole regex.",
-    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin#regex-modifiers"
+    "docsUrl": "https://github.com/navikt/browserslist-config/tree/main/packages/lint-plugin-experimental#regex-modifiers"
   }
 ];

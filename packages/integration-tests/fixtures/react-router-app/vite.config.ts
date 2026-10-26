@@ -1,5 +1,5 @@
 import { reactRouter } from '@react-router/dev/vite';
-import navBrowserTargets from '@navikt/browserslist-config/vite';
+import navBrowserTargets from '@navikt/browserslist-config-public/vite';
 import { defineConfig } from 'vite';
 
 // NAV_VARIANT:

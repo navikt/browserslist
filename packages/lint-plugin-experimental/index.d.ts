@@ -21,7 +21,7 @@ export interface BrowserSupportPlugin extends ESLint.Plugin {
   configs: {
     /**
      * eslint-plugin-compat (Web APIs vs the consumer's browserslist, which
-     * must extend @navikt/browserslist-config) + wrapped eslint-plugin-es-x
+     * must extend @navikt/browserslist-config-public) + wrapped eslint-plugin-es-x
      * rules for builtins below the floor that nothing polyfills.
      */
     recommended: Linter.Config[];

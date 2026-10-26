@@ -1,12 +1,12 @@
 {
-  "name": "@navikt/browserslist-config",
+  "name": "@navikt/browserslist-config-public",
   "version": "0.2.0",
-  "description": "Nav's shared browser support targets: a browserslist shareable config plus precomputed esbuild, Lightning CSS, Vite, Astro and Remix helpers.",
+  "description": "Nav's shared browser support targets for public-facing sites: a browserslist shareable config plus precomputed esbuild, Lightning CSS, Vite, Astro and Remix helpers.",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/navikt/browserslist-config.git",
-    "directory": "packages/config"
+    "directory": "packages/config-public"
   },
   "homepage": "https://github.com/navikt/browserslist-config#readme",
   "bugs": "https://github.com/navikt/browserslist-config/issues",
@@ -14,6 +14,7 @@
     "browserslist",
     "browserslist-config",
     "browser-support",
+    "public",
     "nav",
     "navikt"
   ],

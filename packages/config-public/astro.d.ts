@@ -11,7 +11,7 @@ import type { AstroIntegration } from 'astro';
  * default); any other value is kept. `cssTarget` is only filled when unset.
  *
  * ```ts
- * import navBrowserTargets from '@navikt/browserslist-config/astro';
+ * import navBrowserTargets from '@navikt/browserslist-config-public/astro';
  * export default defineConfig({ integrations: [navBrowserTargets()] });
  * ```
  */

@@ -8,7 +8,7 @@ import { promisify } from 'node:util';
 const require = createRequire(import.meta.url);
 const run = promisify(execFile);
 
-const configDir = path.dirname(require.resolve('@navikt/browserslist-config/package.json'));
+const configDir = path.dirname(require.resolve('@navikt/browserslist-config-public/package.json'));
 
 const REQUIRED = [
   'astro.d.ts',

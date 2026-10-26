@@ -2,13 +2,13 @@
   "name": "@navikt/browserslist-integration-tests",
   "version": "0.0.0",
   "private": true,
-  "description": "Consumer-perspective integration tests for @navikt/browserslist-config and @navikt/browser-support-linting. Never published.",
+  "description": "Consumer-perspective integration tests for @navikt/browserslist-config-public and @navikt/browser-support-linting. Never published.",
   "scripts": {
     "test": "node --test"
   },
   "devDependencies": {
     "@navikt/browser-support-linting": "workspace:*",
-    "@navikt/browserslist-config": "workspace:*",
+    "@navikt/browserslist-config-public": "workspace:*",
     "@react-router/dev": "8.4.0",
     "@react-router/node": "8.4.0",
     "@remix-run/assets": "0.8.0",

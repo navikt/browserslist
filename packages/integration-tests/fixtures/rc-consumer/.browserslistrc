@@ -1,1 +1,1 @@
-extends @navikt/browserslist-config
+extends @navikt/browserslist-config-public

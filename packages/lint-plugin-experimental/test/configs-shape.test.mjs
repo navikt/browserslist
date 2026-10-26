@@ -22,7 +22,7 @@ describe('configs.recommended', () => {
   });
 
   it("pins the compat rule to the floor's browserslist query — no consumer setup", () => {
-    const browsers = require('@navikt/browserslist-config/browsers.json');
+    const browsers = require('@navikt/browserslist-config-public/browsers.json');
     const floorQuery = Object.entries(browsers)
       .map(([family, version]) => `${family} >= ${version}`)
       .join(', ');

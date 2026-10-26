@@ -1,11 +1,14 @@
 # @navikt/browser-support-linting
 
-ESLint and oxlint presets that flag what a bundler cannot fix (syntax-lower) for [Nav's browser targets](https://github.com/navikt/browserslist-config).
+> [!WARNING]
+> **Experimental — not ready for use.** This plugin is still under development. Rules, config shapes and exports may change or be removed without notice, and it is not yet recommended for production projects.
+
+ESLint and oxlint presets that flag what a bundler cannot fix (syntax-lower) for [Nav's public-facing browser targets](../config-public/README.md).
 
 ## Usage
 
 ```sh
-pnpm add -D eslint @navikt/browser-support-linting @navikt/browserslist-config
+pnpm add -D eslint @navikt/browser-support-linting @navikt/browserslist-config-public
 ```
 
 Requires ESLint 10.6 or newer (the `eslint-plugin-es-x` rules this preset wraps need it).
@@ -150,7 +153,7 @@ Alternatively, just use a nested config, oxlint applies the nearest config file 
 
 ## Versioning
 
-- A floor bump in `@navikt/browserslist-config` should regenerate the rules here and is a breaking change
+- A floor bump in `@navikt/browserslist-config-public` should regenerate the rules here and is a breaking change
 - New rules without a change in the _config_ should be a patch.
 
 ## Development

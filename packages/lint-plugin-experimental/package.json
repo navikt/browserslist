@@ -1,12 +1,12 @@
 {
   "name": "@navikt/browser-support-linting",
   "version": "0.1.1",
-  "description": "ESLint/Oxlint presets that flag Nav's non-lowerable syntax.",
+  "description": "Experimental, not ready for use: ESLint/Oxlint presets that flag non-lowerable syntax for Nav's public-facing browser targets.",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/navikt/browserslist-config.git",
-    "directory": "packages/lint-plugin"
+    "directory": "packages/lint-plugin-experimental"
   },
   "homepage": "https://github.com/navikt/browserslist-config#readme",
   "bugs": "https://github.com/navikt/browserslist-config/issues",
@@ -43,7 +43,7 @@
     "node": ">=24"
   },
   "peerDependencies": {
-    "@navikt/browserslist-config": "workspace:^",
+    "@navikt/browserslist-config-public": "workspace:^",
     "eslint": "^10.6.0"
   },
   "dependencies": {
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@mdn/browser-compat-data": "8.0.13",
-    "@navikt/browserslist-config": "workspace:*",
+    "@navikt/browserslist-config-public": "workspace:*",
     "eslint": "10.9.1"
   },
   "publishConfig": {
