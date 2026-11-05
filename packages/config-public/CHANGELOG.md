@@ -1,5 +1,11 @@
 # @navikt/browserslist-config
 
+## 1.0.0
+
+### Major Changes
+
+- e035537: First stable release (1.0.0).
+
 ## 0.3.0
 
 ### Minor Changes
