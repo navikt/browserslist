@@ -76,18 +76,6 @@
   "engines": {
     "node": ">=24"
   },
-  "peerDependencies": {
-    "astro": ">=7",
-    "vite": ">=7"
-  },
-  "peerDependenciesMeta": {
-    "astro": {
-      "optional": true
-    },
-    "vite": {
-      "optional": true
-    }
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com"

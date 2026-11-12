@@ -1,10 +1,12 @@
-import type { Plugin } from 'vite';
+// Manually write out the type for Vite so we avoid Vite as a peerDep.
+// Many projects would automatically bring a peerDep dep in, ew.
+export interface NavBrowserTargetsPlugin {
+  name: 'nav:browser-targets';
+  /** Fills Vite's (mutable) user config where it's unset. */
+  config(config: object): void;
+}
 
 /**
- * Vite plugin that applies Nav's browser targets (`build.target`, dev-server
- * dependency pre-bundling, and Lightning CSS transformer targets when opted
- * in) wherever the config has not already set them. User values always win.
- *
  * ```ts
  * import navBrowserTargets from '@navikt/browserslist-config-public/vite';
  * export default defineConfig({ plugins: [navBrowserTargets()] });
@@ -18,7 +20,7 @@ import type { Plugin } from 'vite';
  * export default defineConfig({ build: { target: targets } });
  * ```
  */
-export default function navBrowserTargets(): Plugin;
+export default function navBrowserTargets(): NavBrowserTargetsPlugin;
 
 /** esbuild/Vite `build.target` strings — identical to the `./esbuild` export. */
 export const targets: typeof import('./esbuild.js').default;
